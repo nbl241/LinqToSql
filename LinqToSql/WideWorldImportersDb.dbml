@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WideWorldImporters" Class="WideWorldImportersDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=UTILISA-PFCSKJJ\SQLEXPRESS;Initial Catalog=WideWorldImporters;Integrated Security=True" SettingsObjectName="LinqToSql.Properties.Settings" SettingsPropertyName="WideWorldImportersConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Application.People" Member="People">
+    <Type Name="People">
+      <Column Name="PersonID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PreferredName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SearchName" Type="System.String" DbType="NVarChar(101) NOT NULL" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsPermittedToLogon" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LogonName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsExternalLogonProvider" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="HashedPassword" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsSystemUser" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsEmployee" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsSalesperson" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UserPreferences" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FaxNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CustomFields" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OtherLanguages" Type="System.String" DbType="NVarChar(MAX)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastEditedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="ValidTo" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Association Name="People_People" Member="People2" ThisKey="PersonID" OtherKey="LastEditedBy" Type="People" />
+      <Association Name="People_CustomerCategories" Member="CustomerCategories" ThisKey="PersonID" OtherKey="LastEditedBy" Type="CustomerCategories" />
+      <Association Name="People_Invoices" Member="Invoices" ThisKey="PersonID" OtherKey="AccountsPersonID" Type="Invoices" />
+      <Association Name="People_Invoices1" Member="Invoices1" ThisKey="PersonID" OtherKey="LastEditedBy" Type="Invoices" />
+      <Association Name="People_Invoices2" Member="Invoices2" ThisKey="PersonID" OtherKey="ContactPersonID" Type="Invoices" />
+      <Association Name="People_Invoices3" Member="Invoices3" ThisKey="PersonID" OtherKey="PackedByPersonID" Type="Invoices" />
+      <Association Name="People_Invoices4" Member="Invoices4" ThisKey="PersonID" OtherKey="SalespersonPersonID" Type="Invoices" />
+      <Association Name="People_InvoiceLines" Member="InvoiceLines" ThisKey="PersonID" OtherKey="LastEditedBy" Type="InvoiceLines" />
+      <Association Name="People_OrderLines" Member="OrderLines" ThisKey="PersonID" OtherKey="LastEditedBy" Type="OrderLines" />
+      <Association Name="People_Orders" Member="Orders" ThisKey="PersonID" OtherKey="LastEditedBy" Type="Orders" />
+      <Association Name="People_Orders1" Member="Orders1" ThisKey="PersonID" OtherKey="ContactPersonID" Type="Orders" />
+      <Association Name="People_Orders2" Member="Orders2" ThisKey="PersonID" OtherKey="PickedByPersonID" Type="Orders" />
+      <Association Name="People_Orders3" Member="Orders3" ThisKey="PersonID" OtherKey="SalespersonPersonID" Type="Orders" />
+      <Association Name="People_People" Member="People1" ThisKey="LastEditedBy" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Sales.CustomerCategories" Member="CustomerCategories">
+    <Type Name="CustomerCategories">
+      <Column Name="CustomerCategoryID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerCategoryName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastEditedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="ValidTo" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Association Name="People_CustomerCategories" Member="People" ThisKey="LastEditedBy" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Sales.Invoices" Member="Invoices">
+    <Type Name="Invoices">
+      <Column Name="InvoiceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BillToCustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeliveryMethodID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContactPersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccountsPersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SalespersonPersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PackedByPersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerPurchaseOrderNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="IsCreditNote" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreditNoteReason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DeliveryInstructions" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="InternalComments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TotalDryItems" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalChillerItems" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DeliveryRun" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="RunPosition" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="ReturnedDeliveryData" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ConfirmedDeliveryTime" Type="System.DateTime" DbType="DateTime2" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ConfirmedReceivedBy" Type="System.String" DbType="NVarChar(4000)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastEditedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastEditedWhen" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Association Name="Invoices_InvoiceLines" Member="InvoiceLines" ThisKey="InvoiceID" OtherKey="InvoiceID" Type="InvoiceLines" />
+      <Association Name="People_Invoices" Member="People" ThisKey="AccountsPersonID" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+      <Association Name="People_Invoices1" Member="People1" ThisKey="LastEditedBy" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+      <Association Name="People_Invoices2" Member="People2" ThisKey="ContactPersonID" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+      <Association Name="People_Invoices3" Member="People3" ThisKey="PackedByPersonID" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+      <Association Name="People_Invoices4" Member="People4" ThisKey="SalespersonPersonID" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+      <Association Name="Orders_Invoices" Member="Orders" ThisKey="OrderID" OtherKey="OrderID" Type="Orders" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Sales.InvoiceLines" Member="InvoiceLines">
+    <Type Name="InvoiceLines">
+      <Column Name="InvoiceLineID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="InvoiceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StockItemID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PackageTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TaxRate" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="TaxAmount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="LineProfit" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ExtendedPrice" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="LastEditedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastEditedWhen" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Association Name="People_InvoiceLines" Member="People" ThisKey="LastEditedBy" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+      <Association Name="Invoices_InvoiceLines" Member="Invoices" ThisKey="InvoiceID" OtherKey="InvoiceID" Type="Invoices" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Sales.OrderLines" Member="OrderLines">
+    <Type Name="OrderLines">
+      <Column Name="OrderLineID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StockItemID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PackageTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TaxRate" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="PickedQuantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PickingCompletedWhen" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="LastEditedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastEditedWhen" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Association Name="People_OrderLines" Member="People" ThisKey="LastEditedBy" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+      <Association Name="Orders_OrderLines" Member="Orders" ThisKey="OrderID" OtherKey="OrderID" Type="Orders" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Sales.Orders" Member="Orders">
+    <Type Name="Orders">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SalespersonPersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PickedByPersonID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContactPersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BackorderOrderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ExpectedDeliveryDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerPurchaseOrderNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="IsUndersupplyBackordered" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DeliveryInstructions" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="InternalComments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PickingCompletedWhen" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="LastEditedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastEditedWhen" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Association Name="Orders_Invoices" Member="Invoices" ThisKey="OrderID" OtherKey="OrderID" Type="Invoices" />
+      <Association Name="Orders_OrderLines" Member="OrderLines" ThisKey="OrderID" OtherKey="OrderID" Type="OrderLines" />
+      <Association Name="Orders_Orders" Member="Orders2" ThisKey="OrderID" OtherKey="BackorderOrderID" Type="Orders" />
+      <Association Name="People_Orders" Member="People" ThisKey="LastEditedBy" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+      <Association Name="Orders_Orders" Member="Orders1" ThisKey="BackorderOrderID" OtherKey="OrderID" Type="Orders" IsForeignKey="true" />
+      <Association Name="People_Orders1" Member="People1" ThisKey="ContactPersonID" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+      <Association Name="People_Orders2" Member="People2" ThisKey="PickedByPersonID" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+      <Association Name="People_Orders3" Member="People3" ThisKey="SalespersonPersonID" OtherKey="PersonID" Type="People" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Website.NewCustomers" Member="NewCustomers">
+    <Type Name="NewCustomers">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerCategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PrimaryContact" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AlternateContact" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FaxNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BuyingGroupName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WebsiteURL" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="DeliveryMethod" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CityName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeliveryRun" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="RunPosition" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

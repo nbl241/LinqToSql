@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.75, 10.625" name="WideWorldImportersDb">
+  <DataContextMoniker Name="/WideWorldImportersDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" absoluteBounds="0.5, 0.5, 2, 4.8477197265625">
+      <DataClassMoniker Name="/WideWorldImportersDbDataContext/People" />
+      <nestedChildShapes>
+        <elementListCompartment Id="501fea8d-3a08-420e-8caa-02e61147382c" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 0.5); (1.5 : 0.25); (1.94307692307692 : 0.25); (1.94307692307692 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_People" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c77530ac-b597-41e3-b83e-00e26b16bc54" absoluteBounds="8.375, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/WideWorldImportersDbDataContext/CustomerCategories" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb8c29c1-41bc-47c6-9f46-c6f3c15ec1d1" absoluteBounds="8.39, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.38544840494792); (8.375 : 1.38544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_CustomerCategories" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="c77530ac-b597-41e3-b83e-00e26b16bc54" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c89af0a5-d989-44bf-b8c1-026a0f80707b" absoluteBounds="5.75, 2.75, 2, 5.6169254557291657">
+      <DataClassMoniker Name="/WideWorldImportersDbDataContext/Invoices" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c782217a-e590-4e94-956d-6065e40b6fab" absoluteBounds="5.765, 3.21, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.79922766445699); (5.75 : 3.79922766445699)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_Invoices" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="c89af0a5-d989-44bf-b8c1-026a0f80707b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.38634149668549); (5.75 : 4.38634149668549)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_Invoices1" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="c89af0a5-d989-44bf-b8c1-026a0f80707b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 3.2121138322285); (5.75 : 3.2121138322285)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_Invoices2" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="c89af0a5-d989-44bf-b8c1-026a0f80707b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.09278458057124); (5.75 : 4.09278458057124)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_Invoices3" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="c89af0a5-d989-44bf-b8c1-026a0f80707b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 3.50567074834275); (5.75 : 3.50567074834275)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_Invoices4" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="c89af0a5-d989-44bf-b8c1-026a0f80707b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d34d0dd2-02b7-4696-aa29-3a41e9cbca19" absoluteBounds="8.375, 2.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/WideWorldImportersDbDataContext/InvoiceLines" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e88b2a3b-8a44-4d91-87ca-5e9f7e31f94c" absoluteBounds="8.39, 3.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.44712604329427); (9.04210902522505 : 2.44712604329427); (9.04210902522505 : 2.75)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Caller">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_InvoiceLines" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="d34d0dd2-02b7-4696-aa29-3a41e9cbca19" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.75 : 4.40465413411458); (8.375 : 4.40465413411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/Invoices/Invoices_InvoiceLines" />
+      <nodes>
+        <classShapeMoniker Id="c89af0a5-d989-44bf-b8c1-026a0f80707b" />
+        <classShapeMoniker Id="d34d0dd2-02b7-4696-aa29-3a41e9cbca19" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="344d3ad6-74af-4909-97eb-5eaa24761c25" absoluteBounds="3.25, 5.75, 2, 3.1170068359375">
+      <DataClassMoniker Name="/WideWorldImportersDbDataContext/OrderLines" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1dec9a94-a0de-43e4-8714-827e844e9ff5" absoluteBounds="3.2649999999999997, 6.2100000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 4.97345532891399); (4.25 : 4.97345532891399); (4.25 : 5.75)]" fixedFrom="Caller" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_OrderLines" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="344d3ad6-74af-4909-97eb-5eaa24761c25" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="35bcb9b2-ae7c-4b7a-814b-1435e9a2d8d4" absoluteBounds="0.5, 6, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/WideWorldImportersDbDataContext/Orders" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d08cb47f-bb1f-4816-9d1e-12dca625d90e" absoluteBounds="0.51499999999999968, 6.4600000000000009, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 9.40785970052083); (6.75 : 9.40785970052083); (6.75 : 8.36692545572917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/Orders/Orders_Invoices" />
+      <nodes>
+        <classShapeMoniker Id="35bcb9b2-ae7c-4b7a-814b-1435e9a2d8d4" />
+        <classShapeMoniker Id="c89af0a5-d989-44bf-b8c1-026a0f80707b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 7.43350341796875); (3.25 : 7.43350341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/Orders/Orders_OrderLines" />
+      <nodes>
+        <classShapeMoniker Id="35bcb9b2-ae7c-4b7a-814b-1435e9a2d8d4" />
+        <classShapeMoniker Id="344d3ad6-74af-4909-97eb-5eaa24761c25" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.4687475 : 5.3477197265625); (1.4687475 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_Orders" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="35bcb9b2-ae7c-4b7a-814b-1435e9a2d8d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.20923076923077 : 9.88621256510417); (1.20923076923077 : 10.1362125651042); (1.80461538461538 : 10.1362125651042); (1.80461538461538 : 9.88621256510417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/Orders/Orders_Orders" />
+      <nodes>
+        <classShapeMoniker Id="35bcb9b2-ae7c-4b7a-814b-1435e9a2d8d4" />
+        <classShapeMoniker Id="35bcb9b2-ae7c-4b7a-814b-1435e9a2d8d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.01562125 : 5.3477197265625); (2.01562125 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_Orders1" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="35bcb9b2-ae7c-4b7a-814b-1435e9a2d8d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.92187375 : 5.3477197265625); (0.92187375 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_Orders2" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="35bcb9b2-ae7c-4b7a-814b-1435e9a2d8d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.742184375 : 5.3477197265625); (1.742184375 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WideWorldImportersDbDataContext/People/People_Orders3" />
+      <nodes>
+        <classShapeMoniker Id="17ae9505-cc42-40c7-9609-c1e207e74bdd" />
+        <classShapeMoniker Id="35bcb9b2-ae7c-4b7a-814b-1435e9a2d8d4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1a7b61e0-4388-4322-9918-e3f7eb651ffc" absoluteBounds="11.5, 1.875, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/WideWorldImportersDbDataContext/NewCustomers" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df9396b9-3487-4ec4-b950-e1b6ee2865ef" absoluteBounds="11.515, 2.3350000000000009, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

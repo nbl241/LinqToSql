@@ -10,6 +10,13 @@ namespace LinqToSql
     {
         static void Main(string[] args)
         {
+            var dbContext = new WideWorldImportersDbDataContext();
+            var allInvoices = dbContext.OrderLines.Select(o => o.Description).Take(100);
+            foreach (var allInvoice in allInvoices)
+            {
+                Console.WriteLine(allInvoice);
+            }
+            Console.ReadLine();
         }
     }
 }
