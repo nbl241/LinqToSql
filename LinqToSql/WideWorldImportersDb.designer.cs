@@ -45,9 +45,9 @@ namespace LinqToSql
     partial void InsertOrderLines(OrderLines instance);
     partial void UpdateOrderLines(OrderLines instance);
     partial void DeleteOrderLines(OrderLines instance);
-    partial void InsertOrders(Orders instance);
-    partial void UpdateOrders(Orders instance);
-    partial void DeleteOrders(Orders instance);
+    partial void InsertOrders(Order instance);
+    partial void UpdateOrders(Order instance);
+    partial void DeleteOrders(Order instance);
     #endregion
 		
 		public WideWorldImportersDbDataContext() : 
@@ -120,11 +120,11 @@ namespace LinqToSql
 			}
 		}
 		
-		public System.Data.Linq.Table<Orders> Orders
+		public System.Data.Linq.Table<Order> Orders
 		{
 			get
 			{
-				return this.GetTable<Orders>();
+				return this.GetTable<Order>();
 			}
 		}
 		
@@ -203,13 +203,13 @@ namespace LinqToSql
 		
 		private EntitySet<OrderLines> _OrderLines;
 		
-		private EntitySet<Orders> _Orders;
+		private EntitySet<Order> _Orders;
 		
-		private EntitySet<Orders> _Orders1;
+		private EntitySet<Order> _Orders1;
 		
-		private EntitySet<Orders> _Orders2;
+		private EntitySet<Order> _Orders2;
 		
-		private EntitySet<Orders> _Orders3;
+		private EntitySet<Order> _Orders3;
 		
 		private EntityRef<People> _People1;
 		
@@ -272,10 +272,10 @@ namespace LinqToSql
 			this._Invoices4 = new EntitySet<Invoices>(new Action<Invoices>(this.attach_Invoices4), new Action<Invoices>(this.detach_Invoices4));
 			this._InvoiceLines = new EntitySet<InvoiceLines>(new Action<InvoiceLines>(this.attach_InvoiceLines), new Action<InvoiceLines>(this.detach_InvoiceLines));
 			this._OrderLines = new EntitySet<OrderLines>(new Action<OrderLines>(this.attach_OrderLines), new Action<OrderLines>(this.detach_OrderLines));
-			this._Orders = new EntitySet<Orders>(new Action<Orders>(this.attach_Orders), new Action<Orders>(this.detach_Orders));
-			this._Orders1 = new EntitySet<Orders>(new Action<Orders>(this.attach_Orders1), new Action<Orders>(this.detach_Orders1));
-			this._Orders2 = new EntitySet<Orders>(new Action<Orders>(this.attach_Orders2), new Action<Orders>(this.detach_Orders2));
-			this._Orders3 = new EntitySet<Orders>(new Action<Orders>(this.attach_Orders3), new Action<Orders>(this.detach_Orders3));
+			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
+			this._Orders1 = new EntitySet<Order>(new Action<Order>(this.attach_Orders1), new Action<Order>(this.detach_Orders1));
+			this._Orders2 = new EntitySet<Order>(new Action<Order>(this.attach_Orders2), new Action<Order>(this.detach_Orders2));
+			this._Orders3 = new EntitySet<Order>(new Action<Order>(this.attach_Orders3), new Action<Order>(this.detach_Orders3));
 			this._People1 = default(EntityRef<People>);
 			OnCreated();
 		}
@@ -822,7 +822,7 @@ namespace LinqToSql
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="People_Orders", Storage="_Orders", ThisKey="PersonID", OtherKey="LastEditedBy")]
-		public EntitySet<Orders> Orders
+		public EntitySet<Order> Orders
 		{
 			get
 			{
@@ -835,7 +835,7 @@ namespace LinqToSql
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="People_Orders1", Storage="_Orders1", ThisKey="PersonID", OtherKey="ContactPersonID")]
-		public EntitySet<Orders> Orders1
+		public EntitySet<Order> Orders1
 		{
 			get
 			{
@@ -848,7 +848,7 @@ namespace LinqToSql
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="People_Orders2", Storage="_Orders2", ThisKey="PersonID", OtherKey="PickedByPersonID")]
-		public EntitySet<Orders> Orders2
+		public EntitySet<Order> Orders2
 		{
 			get
 			{
@@ -861,7 +861,7 @@ namespace LinqToSql
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="People_Orders3", Storage="_Orders3", ThisKey="PersonID", OtherKey="SalespersonPersonID")]
-		public EntitySet<Orders> Orders3
+		public EntitySet<Order> Orders3
 		{
 			get
 			{
@@ -1035,49 +1035,49 @@ namespace LinqToSql
 			entity.People = null;
 		}
 		
-		private void attach_Orders(Orders entity)
+		private void attach_Orders(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.People = this;
 		}
 		
-		private void detach_Orders(Orders entity)
+		private void detach_Orders(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.People = null;
 		}
 		
-		private void attach_Orders1(Orders entity)
+		private void attach_Orders1(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.People1 = this;
 		}
 		
-		private void detach_Orders1(Orders entity)
+		private void detach_Orders1(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.People1 = null;
 		}
 		
-		private void attach_Orders2(Orders entity)
+		private void attach_Orders2(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.People2 = this;
 		}
 		
-		private void detach_Orders2(Orders entity)
+		private void detach_Orders2(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.People2 = null;
 		}
 		
-		private void attach_Orders3(Orders entity)
+		private void attach_Orders3(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.People3 = this;
 		}
 		
-		private void detach_Orders3(Orders entity)
+		private void detach_Orders3(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.People3 = null;
@@ -1351,7 +1351,7 @@ namespace LinqToSql
 		
 		private EntityRef<People> _People4;
 		
-		private EntityRef<Orders> _Orders;
+		private EntityRef<Order> _Orders;
 		
     #region Définitions de méthodes d'extensibilité
     partial void OnLoaded();
@@ -1417,7 +1417,7 @@ namespace LinqToSql
 			this._People2 = default(EntityRef<People>);
 			this._People3 = default(EntityRef<People>);
 			this._People4 = default(EntityRef<People>);
-			this._Orders = default(EntityRef<Orders>);
+			this._Orders = default(EntityRef<Order>);
 			OnCreated();
 		}
 		
@@ -2129,7 +2129,7 @@ namespace LinqToSql
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Orders_Invoices", Storage="_Orders", ThisKey="OrderID", OtherKey="OrderID", IsForeignKey=true)]
-		public Orders Orders
+		public Order Orders
 		{
 			get
 			{
@@ -2137,7 +2137,7 @@ namespace LinqToSql
 			}
 			set
 			{
-				Orders previousValue = this._Orders.Entity;
+				Order previousValue = this._Orders.Entity;
 				if (((previousValue != value) 
 							|| (this._Orders.HasLoadedOrAssignedValue == false)))
 				{
@@ -2659,7 +2659,7 @@ namespace LinqToSql
 		
 		private EntityRef<People> _People;
 		
-		private EntityRef<Orders> _Orders;
+		private EntityRef<Order> _Orders;
 		
     #region Définitions de méthodes d'extensibilité
     partial void OnLoaded();
@@ -2694,7 +2694,7 @@ namespace LinqToSql
 		public OrderLines()
 		{
 			this._People = default(EntityRef<People>);
-			this._Orders = default(EntityRef<Orders>);
+			this._Orders = default(EntityRef<Order>);
 			OnCreated();
 		}
 		
@@ -2981,7 +2981,7 @@ namespace LinqToSql
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Orders_OrderLines", Storage="_Orders", ThisKey="OrderID", OtherKey="OrderID", IsForeignKey=true)]
-		public Orders Orders
+		public Order Orders
 		{
 			get
 			{
@@ -2989,7 +2989,7 @@ namespace LinqToSql
 			}
 			set
 			{
-				Orders previousValue = this._Orders.Entity;
+				Order previousValue = this._Orders.Entity;
 				if (((previousValue != value) 
 							|| (this._Orders.HasLoadedOrAssignedValue == false)))
 				{
@@ -3036,7 +3036,7 @@ namespace LinqToSql
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="Sales.Orders")]
-	public partial class Orders : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Order : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -3077,11 +3077,11 @@ namespace LinqToSql
 		
 		private EntitySet<OrderLines> _OrderLines;
 		
-		private EntitySet<Orders> _Orders2;
+		private EntitySet<Order> _Orders2;
 		
 		private EntityRef<People> _People;
 		
-		private EntityRef<Orders> _Orders1;
+		private EntityRef<Order> _Orders1;
 		
 		private EntityRef<People> _People1;
 		
@@ -3127,13 +3127,13 @@ namespace LinqToSql
     partial void OnLastEditedWhenChanged();
     #endregion
 		
-		public Orders()
+		public Order()
 		{
 			this._Invoices = new EntitySet<Invoices>(new Action<Invoices>(this.attach_Invoices), new Action<Invoices>(this.detach_Invoices));
 			this._OrderLines = new EntitySet<OrderLines>(new Action<OrderLines>(this.attach_OrderLines), new Action<OrderLines>(this.detach_OrderLines));
-			this._Orders2 = new EntitySet<Orders>(new Action<Orders>(this.attach_Orders2), new Action<Orders>(this.detach_Orders2));
+			this._Orders2 = new EntitySet<Order>(new Action<Order>(this.attach_Orders2), new Action<Order>(this.detach_Orders2));
 			this._People = default(EntityRef<People>);
-			this._Orders1 = default(EntityRef<Orders>);
+			this._Orders1 = default(EntityRef<Order>);
 			this._People1 = default(EntityRef<People>);
 			this._People2 = default(EntityRef<People>);
 			this._People3 = default(EntityRef<People>);
@@ -3507,7 +3507,7 @@ namespace LinqToSql
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Orders_Orders", Storage="_Orders2", ThisKey="OrderID", OtherKey="BackorderOrderID")]
-		public EntitySet<Orders> Orders2
+		public EntitySet<Order> Orders2
 		{
 			get
 			{
@@ -3554,7 +3554,7 @@ namespace LinqToSql
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Orders_Orders", Storage="_Orders1", ThisKey="BackorderOrderID", OtherKey="OrderID", IsForeignKey=true)]
-		public Orders Orders1
+		public Order Orders1
 		{
 			get
 			{
@@ -3562,7 +3562,7 @@ namespace LinqToSql
 			}
 			set
 			{
-				Orders previousValue = this._Orders1.Entity;
+				Order previousValue = this._Orders1.Entity;
 				if (((previousValue != value) 
 							|| (this._Orders1.HasLoadedOrAssignedValue == false)))
 				{
@@ -3733,13 +3733,13 @@ namespace LinqToSql
 			entity.Orders = null;
 		}
 		
-		private void attach_Orders2(Orders entity)
+		private void attach_Orders2(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.Orders1 = this;
 		}
 		
-		private void detach_Orders2(Orders entity)
+		private void detach_Orders2(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.Orders1 = null;
