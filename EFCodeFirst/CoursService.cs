@@ -21,12 +21,13 @@ namespace EFCodeFirst
             {
                 Etudiant etudiant = new Etudiant
                 {
-                    Id = 1,
-                    Nom = "nabil",
-                    DateNaissance = new DateTime(1986, 11, 24),
-                    Adresse = "59 rue Gambetta 76250"
+                    Id = id,
+                    Nom = nom,
+                    DateNaissance = dateDeNaissance,
+                    Adresse = adresse
                 };
-
+                dbContext.Etudiants.Add(etudiant);
+                dbContext.SaveChanges();
             }
         }
     }
