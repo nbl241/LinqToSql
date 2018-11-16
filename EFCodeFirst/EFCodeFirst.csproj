@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{01509A12-D406-4BD0-B936-F332C350988E}</ProjectGuid>
+    <ProjectGuid>{C3443A37-E9F8-42C3-AFD1-9FE78FDF80CB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LinqToSql</RootNamespace>
-    <AssemblyName>LinqToSql</AssemblyName>
+    <RootNamespace>EFCodeFirst</RootNamespace>
+    <AssemblyName>EFCodeFirst</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,40 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Orders.cs" />
+    <Compile Include="Cours.cs" />
+    <Compile Include="CoursService.cs" />
+    <Compile Include="Etudiant.cs" />
+    <Compile Include="FormationContext.cs" />
+    <Compile Include="Migrations\201811161549506_InitMigration.cs" />
+    <Compile Include="Migrations\201811161549506_InitMigration.Designer.cs">
+      <DependentUpon>201811161549506_InitMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="WideWorldImportersDb.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WideWorldImportersDb.dbml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="WideWorldImportersDb.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>WideWorldImportersDb.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="WideWorldImportersDb.dbml.layout">
-      <DependentUpon>WideWorldImportersDb.dbml</DependentUpon>
-    </None>
+    <EmbeddedResource Include="Migrations\201811161549506_InitMigration.resx">
+      <DependentUpon>201811161549506_InitMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
