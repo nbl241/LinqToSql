@@ -54,11 +54,14 @@
     <Compile Include="CoursService.cs" />
     <Compile Include="Etudiant.cs" />
     <Compile Include="FormationContext.cs" />
-    <Compile Include="Migrations\201811161549506_InitMigration.cs" />
-    <Compile Include="Migrations\201811161549506_InitMigration.Designer.cs">
-      <DependentUpon>201811161549506_InitMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201811191535208_InitMigration.cs" />
+    <Compile Include="Migrations\201811191535208_InitMigration.Designer.cs">
+      <DependentUpon>201811191535208_InitMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Personne.cs" />
+    <Compile Include="Professeur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811161549506_InitMigration.resx">
-      <DependentUpon>201811161549506_InitMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811191535208_InitMigration.resx">
+      <DependentUpon>201811191535208_InitMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

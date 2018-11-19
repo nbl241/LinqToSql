@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,16 +8,13 @@ using System.Threading.Tasks;
 
 namespace EFCodeFirst
 {
-    public partial class Cours
+    public partial class Personne
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Nom { get; set; }
-        public string NumeroSalle { get; set; }
-        [ForeignKey("Etudiant")]
-        public int EtudiantId { get; set; }
-
-        public virtual Etudiant Etudiant { get; set; }
+        public DateTime DateNaissance { get; set; }
+        public string Adresse { get; set; }
     }
 }

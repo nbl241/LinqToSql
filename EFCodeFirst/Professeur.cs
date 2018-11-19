@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace EFCodeFirst
 {
-    public partial class Etudiant : Personne
+    public partial class Professeur : Personne
     {
-        [ForeignKey("Cours")]
-        public int CoursID { get; set; }
+        public int ModuleID { get; set; }
 
-        public virtual ICollection<Cours> Cours { get; set; }
+        public virtual Module Module { get; set; }
     }
 }

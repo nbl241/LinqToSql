@@ -10,23 +10,14 @@ namespace EFCodeFirst
     {
         public void AddCours()
         {
-            //Cours cours = new Cours();
-            //cours.Id = 1;
-            //cours.Nom = "Entity Framework";
-        }
-
-        public void AddEtudiant()
-        {
             using (var dbContext = new FormationContext())
             {
-                Etudiant etudiant = new Etudiant
+                Cours cours = new Cours();
                 {
-                    Id = id,
-                    Nom = nom,
-                    DateNaissance = dateDeNaissance,
-                    Adresse = adresse
+                    cours.Id = 1;
+                    cours.Nom = "Entity Framework";
                 };
-                dbContext.Etudiants.Add(etudiant);
+                dbContext.Cours.Add(cours);
                 dbContext.SaveChanges();
             }
         }
